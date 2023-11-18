@@ -1,12 +1,12 @@
 const removeFromArray = function(currentArray, ...elementsNeedToRemove) {
-    elementsNeedToRemove.forEach(element => {
-        let RemoveIndex = currentArray.indexOf(element);
-        if (RemoveIndex > -1){
-            currentArray.splice(RemoveIndex,1);
+    const newArray = [];
+    currentArray.forEach(element => {
+        if (!elementsNeedToRemove.includes(element)){
+            newArray.push(element);
         }
     });
     
-    return currentArray;
+    return newArray;
 };
 /*
 Loop currentArray
